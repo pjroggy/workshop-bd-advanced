@@ -6,7 +6,7 @@ Clone ce dépôt grâce au lien donné ci-dessus ⬆ <a href="#input-clone"><i c
 
 Le dossier que tu viens de cloner contient un fichier `database.sql`.  
 
-Ouvre ton terminal à la racine de ce dossier `cd workshop-bdd-advanced` et lance la commande suivante en remplaçant `<your_name>` par ton véritable identifiant de connexion à Mysql :
+Ouvre ton terminal à la racine de ce dossier `cd workshop-db-advanced` et lance la commande suivante en remplaçant `<your_name>` par ton véritable identifiant de connexion à Mysql :
 
 ```bash
 mysql -u <your_name> -p < database.sql
@@ -18,37 +18,8 @@ Connecte-toi ensuite à Mysql et vérifie que la BDD `kaamelott` a bien été cr
 
 Voici les structures des tables que tu viens de créer et sur lesquelles t'appuyer pour la réalisation de cet atelier.
 
-```
-mysql> DESC Kingdom;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| id    | int         | NO   | PRI | NULL    |       |
-| name  | varchar(90) | NO   |     | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-```
-```
-mysql> DESC Role;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| id    | int         | NO   | PRI | NULL    |       |
-| role  | varchar(80) | NO   |     | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-```
-```
-mysql> DESC Person;
-+------------+-------------+------+-----+---------+-------+
-| Field      | Type        | Null | Key | Default | Extra |
-+------------+-------------+------+-----+---------+-------+
-| id         | int         | NO   | PRI | NULL    |       |
-| firstname  | varchar(80) | NO   |     | NULL    |       |
-| lastname   | varchar(80) | YES  |     | NULL    |       |
-| age        | int         | NO   |     | NULL    |       |
-| role_id    | int         | YES  | MUL | NULL    |       |
-| kingdom_id | int         | YES  | MUL | NULL    |       |
-+------------+-------------+------+-----+---------+-------+
-```
+![](modelisation.png)
+{: .text-center }
 
 En racine du dossier que tu viens de cloner se trouve également le fichier `workshop.sql`.  
 Tu pourras t'en servir pour écrire les requêtes au fur et à mesure de l'atelier. Pour les exécuter facilement dans ton terminal, utilise la commande suivante :
